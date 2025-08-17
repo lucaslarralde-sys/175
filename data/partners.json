@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Aqana",
+    "logo": "assets/partners/aqana.png",
+    "url": "https://aqana.com/"
+  },
+  {
+    "name": "Air Clean SRL",
+    "logo": "assets/partners/airclean.png",
+    "url": "https://aircleansrl.com/"
+  },
+  {
+    "name": "DAGA",
+    "logo": "assets/partners/daga.png",
+    "url": "https://dagaequipment.com/es/"
+  },
+  {
+    "name": "FUCHS",
+    "logo": "assets/partners/FUCHS.png",
+    "url": "https://www.fuchswater.com/es/"
+  },
+  {
+    "name": "2G Engenharia & Serviços",
+    "logo": "assets/partners/2g.png",
+    "url": "https://2gservicos.com/"
+  }
+]

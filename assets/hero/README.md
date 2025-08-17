@@ -1,0 +1,1 @@
+Colocá aquí el video `hero.mp4` y opcional `poster.jpg`.

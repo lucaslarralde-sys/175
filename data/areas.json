@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "aguas",
+    "title": "Aguas",
+    "description": "Captación, potabilización y reúso con foco en eficiencia y calidad.",
+    "images": [
+      "assets/areas/aguas/aguas-cover.png"
+    ]
+  },
+  {
+    "slug": "efluentes-urbanos",
+    "title": "Efluentes urbanos",
+    "description": "Tratamiento municipal estable con cumplimiento y costos controlados.",
+    "images": [
+      "assets/areas/efluentes-urbanos/efluentes-urbanos-cover.png"
+    ]
+  },
+  {
+    "slug": "efluentes-industriales-bioenergia",
+    "title": "Efluentes industriales y bioenergía",
+    "description": "Tratamientos FQ/biológicos y valorización energética por biogás.",
+    "images": [
+      "assets/areas/efluentes-industriales-bioenergia/efluentes-industriales-bioenergia-cover.png"
+    ]
+  },
+  {
+    "slug": "aire-gases",
+    "title": "Aire y gases",
+    "description": "Abatimiento de VOCs y olores: lavadores, carbón y biofiltración.",
+    "images": [
+      "assets/areas/aire-gases/aire-gases-cover.png"
+    ]
+  },
+  {
+    "slug": "equipamiento-electromecanico",
+    "title": "Equipamiento electromecánico",
+    "description": "Selección, provisión y mantenimiento de equipos críticos.",
+    "images": [
+      "assets/areas/equipamiento-electromecanico/equipamiento-electromecanico-cover.png"
+    ]
+  }
+]

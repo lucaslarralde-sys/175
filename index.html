@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ecowatt | Ingeniería Ambiental</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Ecowatt Ingeniería Ambiental">
+</head>
+<body class="bg-white text-slate-800">
+  <header class="max-w-7xl mx-auto px-4 py-6 flex items-center gap-4">
+    <img src="assets/logo/logo-ecowatt.png" alt="Ecowatt" class="h-10 w-auto">
+    <nav class="ml-auto hidden md:flex gap-6">
+      <a href="#areas" class="hover:underline">Áreas</a>
+      <a href="#partners" class="hover:underline">Partners</a>
+      <a href="#contacto" class="hover:underline">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative max-w-7xl mx-auto px-4">
+    <div class="rounded-2xl overflow-hidden shadow">
+      <video class="w-full h-[420px] object-cover" autoplay muted loop playsinline poster="assets/hero/poster.jpg">
+        <source src="assets/hero/hero.mp4" type="video/mp4">
+        Tu navegador no soporta video HTML5.
+      </video>
+    </div>
+  </section>
+
+  <!-- Áreas -->
+  <section id="areas" class="max-w-7xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold mb-6">Áreas</h2>
+    <div id="areas-grid" class="grid md:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- Partners -->
+  <section id="partners" class="bg-slate-50 border-t">
+    <div class="max-w-7xl mx-auto px-4 py-10">
+      <h2 class="text-3xl font-semibold mb-6">Partners</h2>
+      <div id="partners-logos" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center"></div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <footer id="contacto" class="border-t">
+    <div class="max-w-7xl mx-auto px-4 py-10 text-sm text-slate-500">
+      © <span id="year"></span> Ecowatt. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Render Áreas
+    fetch('data/areas.json').then(r => r.json()).then(areas => {
+      const grid = document.getElementById('areas-grid');
+      areas.forEach(a => {
+        const firstImg = a.images && a.images.length ? a.images[0] : null;
+        const card = document.createElement('article');
+        card.className = 'rounded-2xl overflow-hidden border shadow-sm hover:shadow transition';
+        card.innerHTML = `
+          <div class="h-40 bg-slate-200 overflow-hidden">
+            ${firstImg ? `<img src="${firstImg}" alt="${a.title}" class="w-full h-full object-cover">` : ''}
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold mb-2">${a.title}</h3>
+            <p class="text-sm text-slate-600">${a.description || ''}</p>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    });
+
+    // Render Partners with preserved links
+    fetch('data/partners.json').then(r => r.json()).then(list => {
+      const wrap = document.getElementById('partners-logos');
+      list.forEach(p => {
+        const a = document.createElement('a');
+        a.href = p.url || '#';
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.className = 'flex items-center justify-center p-4 bg-white rounded-xl border hover:shadow';
+        a.innerHTML = `<img src="${p.logo}" alt="${p.name}" class="max-h-12 object-contain">`;
+        wrap.appendChild(a);
+      });
+    });
+  </script>
+</body>
+</html>
